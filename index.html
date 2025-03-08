@@ -13,189 +13,351 @@
             box-sizing: border-box;
         }
         
-        body {
-            font-family: "Zain", sans-serif;
-            direction: rtl;
-            text-align: right;
-            background-color: #ECEBF1;
-        }
+        /* الأساسيات */
+body {
+    font-family: "Zain", sans-serif;
+    direction: rtl;
+    text-align: right;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
 
-        .header {
-            background-color: #c2c2c2;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            padding: 7px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            top: 0;
-            right: 0;
-        }
+/* الهيدر */
+.header {
+    background-color: #2c2c2c;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 7px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+}
 
-        .logo {
-            height: 25px;
-        }
-
-        
-
-        .nav-bar {
-            background: #fff;
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding-top: 50px;
-            padding-bottom: 50px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .nav-bar a {
-            text-align: center;
-            text-decoration: none;
-            color: #000;
-            margin: 10px;
-        }
-
-        .nav-bar img {
-            width: 100px;
-        }
-
-        @media (max-width: 600px) {
-            .nav-bar {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            }
-
-            .nav-bar a {
-            flex: 1 1 45%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 10px;
-            }
-
-            .nav-bar a {
-            margin: 5px 0;
-            }
-
-        }
-
-        .container {
-            max-width: 400px;
-            margin: 100px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+.logo {
+    height: 25px;
+}
 
 
-        h2 {
-            text-align: center;
-            color: #4460AA;
-            margin-bottom: 20px;
-        }
 
-        .progct1{
-            margin-top: 20px;
-            background-color: #ffffff;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+/* الحاوية الرئيسية */
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-        .h1-progct1{
-            margin-top: 200px;
-            text-align: center;
-            color: #000000;
-            font-size: 80px;
-            margin-bottom: 20px;
-        }
+h2 {
+    text-align: center;
+    color: #4460AA;
+    margin-bottom: 20px;
+}
 
-        @media (max-width: 600px) {
-            .h1-progct1 {
-            font-size: 40px;
-            margin-top: 100px;
-            }
-        }
+/* القسم الرئيسي */
+.progct1 {
+    margin-top: 20px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
 
-        .field {
-            margin-bottom: 15px;
-        }
+.h1-progct1 {
+    text-align: center;
+    color: #000;
+    font-size: 80px;
+    margin-bottom: 20px;
+}
 
-        .field label {
+@media (max-width: 600px) {
+    .h1-progct1 {
+        font-size: 40px;
+        margin-top: 100px;
+    }
+}
+
+/* الحقول */
+
+
+.form {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #0084ff;
+}
+
+@media (max-width: 600px) {
+    .form {
+        max-width: 90%;
+        padding: 15px;
+    }
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #00bfff;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #00bfff;
+}
+
+.message, 
+.signin {
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.signin a {
+  color: #00bfff;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  color: #00bfff;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.input {
+  font-size: medium;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+  background-color: #00bfff;
+}
+
+.submit:hover {
+  background-color: #00bfff96;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+
+
+.footer {
+    padding: 50px;
+        background: #1c1c1c;
+        color: #fff;
+        padding: 20px;
+        text-align: right;
+        direction: rtl;
+    }
+    .footer-top {
+        padding-right: 95px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    .footer-top img{
+        width: 40px;
+    }
+    .footer-container {
+        padding-left: 50px;
+        padding-right: 100px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .footer-column {
+        width: 22%;
+    }
+    .footer-column h4 {
+        cursor: pointer;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+    .footer-column h4:hover {
+        color: #d4d4d4;
+    }
+    .footer-list {
+        list-style: none;
+        padding: 0;
+        display: block;
+        transition: max-height 0.3s ease-out;
+    }
+    .footer-column ul li a {
+        font-size: 18px;
+        color: #ccc;
+        text-decoration: none;
+    }
+    .footer-column ul li a:hover {
+        text-decoration: underline;
+        color: #fff;
+    }
+    .footer-bottom {
+        text-align: center;
+        margin-top: 60px;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .footer-bottom a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .footer-bottom a:hover {
+        text-decoration: underline;
+        color: #ffffff;
+    }
+
+    .footer-bottom .country {
+        color: #ccc;
+        margin-right: 300px;
+    }
+
+    .footer-bottom span {
+        color: #cecece;
+    }
+
+    @media (max-width: 768px) {
+        .footer-bottom .country {
+            font-size: 12px;
             display: block;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 5px;
+            margin: 10px 0 0 0;
         }
-
-        .field input, .field select {
-            width: 90%;
+    }
+    @media (max-width: 768px) {
+        .footer-top{
+            padding-right: 0px;
+            padding-top: 10px;
+        }
+        .footer-container {
             padding: 10px;
-            font-size: 14px;
-            border: 1px solid #757575;
-            border-radius:10px;
-            transition: border-color 0.3s;
+            flex-direction: column;
         }
-
-        .field input:focus, .field select:focus {
-            border-color: #0044ff;
-        }
-
-        input[type="submit"] {
-            
+        .footer-top img{
+        width: 30px;
+    }
+        .footer-column {
             width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #4460AA;
-            color: #fff;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
+        .footer-list {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .footer-column h4::after {
+            content: " ▼";
+            float: left;
+            transition: transform 0.3s ease;
+        }
+        .footer-column.open h4::after {
+            content: " ▲";
+        }
+        .footer-column.open .footer-list {
+            max-height: 500px; /* Adjust as needed */
+        }
+    }
 
-        input[type="submit"]:hover {
-            background-color: #0051ff;
-        }
-        .worng {
-            color: #000000;
-            font-size: 16px;
-            text-align: center;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
 
-        a {
-            color: blue;
-        }
-        .phone {
-            font-size: 14px;
-            color: #ff0000;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-        @media (max-width: 600px) {
-            .container {
-            width: 90%;
-            padding: 10px;
-            }
 
-            .field input, .field select {
-            width: 100%;
-            }
-
-            .worng,.phone {
-            font-size: 14px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -206,80 +368,152 @@
 
     
 
-    <div class="progct1">
-    <h1 class="h1-progct1">   طلب تصميم </h1>
-    </div>
-
-    <div class="nav-bar">
-        <a href="https://os-designer1.github.io/logo-Designer/"><img src="logo.png" alt="Image 1"><br>شعار</a>
-        <a href="https://os-designer1.github.io/card-Designer/"><img src="card-new.png" alt="Image 2"><br>كارت شخصي</a>
-        <a href="https://os-designer1.github.io/Social-media-Designer/"><img src="Untitled-1.jpg" alt="Image 3"><br>اعلانات</a>
-        <a href="https://os-designer1.github.io/panar-Designer/"><img src="عربيه.png" alt="Image 4"><br>يفط و بنرات</a>
-        <a href="#"><img src="05.png" alt="Image 5"><br>خدمات ورقيه</a>
-        <a href="#"><img src="cv.-en.jpg" alt="Image 5"><br>cv</a>
-    </div>
+   
 
 
 
+    <form class="form" id="form">
+        <p class="title">طلب تصميم</p>
+        <p class="message">اطلب تصميمك مع الطباعه ب كل سهوله  .</p>
+        
+        <div class="flex">
+            <label>
+                <input class="input" type="text" name="name" required>
+                <span>الاسم الكامل</span>
+            </label>
+        </div>  
+    
+        <label>
+            <input class="input" type="number" name="phone" required>
+            <span>رقم الهاتف</span>
+        </label> 
+    
+        <label>
+            <select class="input" name="designType" required>
+                <option value="" disabled selected>اختر نوع التصميم</option>
+                <option value="logo">شعار</option>
+                <option value="card">كارت شخصي</option>
+                <option value="social_media">اعلانات</option>
+                <option value="يفط">يفط محل</option>
+                <option value="banner">بنرات</option>
+                <option value="paper_services"> استيكر</option>
+                <option value="banner"> دفاتر </option>
+                <option value="طباعه علي تيشرت">طباعه علي تيشرت</option>
+                <option value="cv">CV</option>
+            </select>
+            <span>نوع التصميم</span>
+        </label>
+    
+        <!-- حقل مخفي لحفظ الموقع -->
+        <input type="hidden" name="location" id="location">
+    
+        <button class="submit" id="button">إرسال الطلب</button>
+        <p>سيتم التواصل معك في اقرب وقت من خلال رقم هاتفك</p>
+    </form>
+    
 
-    <div class="container">
-        <h2>نموذج طلب تصميم</h2>
-        <form id="form">
-            <div class="field">
-                <label for="name">الاسم</label>
-                <input type="text" name="name" id="name" required>
+
+
+
+
+
+
+    <footer class="footer">
+        <div class="footer-top">
+            <a href="https://os-designer1.github.io/OS-Designer/" class="footer-logo">
+                <img src="logo.png" alt="OS Logo">
+            </a>
+            <span>اين تجدنا!</span>
+        </div>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>الخدمات</h4>
+                <ul class="footer-list">
+                    <li><a href="https://os-designer1.github.io/logo-Designer/">شعار</a></li>
+                    <li><a href="https://os-designer1.github.io/panar-Designer/">يفط و بنرات</a></li>
+                    <li><a href="https://os-designer1.github.io/card-Designer/">كارت شخصي </a></li>
+                    <li><a href="https://os-designer1.github.io/Social-media-Designer/">Social media | اعلانات</a></li>
+                    <li><a href="#">طباعه علي تيشرت</a></li>
+                    <li><a href="#">خدمات ورقيه</a></li>
+                    <li><a href="#">cv</a></li>
+                </ul>
             </div>
-            <div class="field">
-                <label for="phone">رقم الهاتف</label>
-                <input type="text" name="phone" id="phone" required>
+            <div class="footer-column">
+                <h4>استكشف</h4>
+                <ul class="footer-list">
+                    <li><a href="#">استكشف كيفيه الطباعه</a></li>
+                </ul>
             </div>
-            <p class="phone">يرجي كتابه رقم الهاتف صحيح لكي يتم التواصل اليك من خلاله</p>
-            <p class="nambr">لمعرفه رقم هاتفك <br><a href="tel:*878%23">فودافون</a><br><a href="tel:*947%23">اتصلات</a><br><a href="tel:%23911%23">اورنج</a></p>
-            <div class="field">
-                <label for="designType">نوع التصميم</label>
-                <select name="designType" id="designType" required>
-                    <option value="" disabled selected>اختر نوع التصميم</option>
-                    <option value="شعار">شعار</option>
-                    <option value="كارت شخصي"> كارت شخصي</option>
-                    <option value=" تصميم اعلانات "> تصميم اعلانات </option>
-                    <option value="cv">cv</option>
-                    <option value="خدمات ورقيه">خدمات ورقيه</option>
-                </select>
+            <div class="footer-column">
+                <h4>التواصل</h4>
+                <ul class="footer-list">
+                    <li><a href="tle:01144898934">اتصل بنا</a></li>
+                    <li><a href="https://wa.me/201144898934">تواصل واتساب</a></li>
+                    <li><a href="mailto:samasemo5647@gmail.com">تواصل عبر البريد الالكتروني</a></li>
+                </ul>
             </div>
-            <input type="submit" id="button" value="إرسال الطلب">
-        </form>
-        <p class="worng">يرجي العلم قبل بدايه التصميم و الطباعه يجب ارسال جزء من حساب الكلي <a href="https://wa.me/201144898934">للتواصل واتساب</a></p>
-    </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <span>OS-Designer. © 2025. العلامة التجارية وجميع الحقوق محفوظة.</span>
+            |
+            <a href="https://maps.app.goo.gl/7onyXFjDYGyX34rU6"> موقعنا</a>
+            <span class="country">مصر | Egypt</span>
+        </div>
+    </footer>
+    
 
 
 
-
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <script type="text/javascript">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
         emailjs.init('_ubIcUNvQZ3-Gv0Cl');
-
+    
         const btn = document.getElementById('button');
-
+        const locationInput = document.getElementById('location');
+    
+        // جلب الموقع الجغرافي عند تحميل الصفحة
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+                locationInput.value = `https://www.google.com/maps?q=${lat},${lng}`;
+            }, error => {
+                console.error("لم يتمكن من تحديد الموقع:", error);
+                locationInput.value = "لم يتمكن من تحديد الموقع";
+            });
+        } else {
+            locationInput.value = "المتصفح لا يدعم تحديد الموقع";
+        }
+    
         document.getElementById('form').addEventListener('submit', function(event) {
             event.preventDefault();
             
-            btn.value = 'جاري الإرسال...';
-
+            btn.innerText = 'جاري الإرسال...';
+    
             const serviceID = 'default_service';
             const templateID = 'template_8jz7qt1';
-
+    
             emailjs.sendForm(serviceID, templateID, this)
             .then(() => {
-                btn.value = 'إرسال الطلب';
+                btn.innerText = 'إرسال الطلب';
                 alert('✅ تم إرسال الطلب بنجاح!');
                 document.getElementById('form').reset();
             }, (err) => {
-                btn.value = 'إرسال الطلب';
+                btn.innerText = 'إرسال الطلب';
                 alert('❌ حدث خطأ، يرجى المحاولة مرة أخرى.');
                 console.error("Error:", err);
             });
         });
+        document.addEventListener("DOMContentLoaded", function () {
+        const columns = document.querySelectorAll(".footer-column h4");
+        columns.forEach(column => {
+            column.addEventListener("click", function () {
+                let parent = this.parentElement;
+                parent.classList.toggle("open");
+            });
+        });
+    });
     </script>
 
 </body>
